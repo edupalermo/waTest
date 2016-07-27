@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <title>WA Test</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h2>Table</h2>
+	
+	
+	<table border="1">
+	<th:block th:each="line : ${table}">
+	    <tr>
+			<th:block th:each="column : ${line}">
+	        	<td th:text="${column}"></td>
+			</th:block>
+	    </tr>
+	</th:block>
+	</table>	
+	
+	
+	<p><a href="/">Try again?</a></p>
+	
+</body>
+</html>

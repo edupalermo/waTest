@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <title>WA Test</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+	<script>
+	function validate() {
+		
+		var submit = true;
+		
+		if (document.getElementById("inputFile").value == "") {
+			window.alert("Please, select an input file!");
+			submit = false;
+		}
+		return submit;
+	}
+	</script>
+    
+    
+</head>
+
+<body>
+
+	<h2>Select the file to be uploaded:</h2>
+
+    <form name="mainForm" action="uploadSuccess.html" th:action="@{/fileUpload}" method="post" enctype="multipart/form-data" onsubmit="return validate();">
+       <input id="inputFile" type="file" name="inputFile" />
+       <input type="submit" />
+    </form>
+</body>
+</html>
