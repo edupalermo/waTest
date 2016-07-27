@@ -54,12 +54,14 @@ public class MainController {
     		
     		List<List<String>> table = new ArrayList<List<String>>();
     		
+    		// Preserving the headers
 			List<String> headers = new ArrayList<String>(parser.getHeaderMap().size());
     		for (Entry<String, Integer> entry : parser.getHeaderMap().entrySet()) {
     			headers.add(entry.getValue(), entry.getKey());
     		}
 			table.add(headers);
     		
+    		// Treating input rows
     		for (CSVRecord record : lines) {
     			
     			if (recordIsToBeAdded(record, headers, notEvaluate, mapLimits)) {
